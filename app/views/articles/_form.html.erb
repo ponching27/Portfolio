@@ -1,0 +1,16 @@
+<%= content_for :page_title, @article.title%>
+<div>
+    <%= simple_form_for @article do |f| %>
+        <div class="ui form">
+            <div class="field">
+                <%= f.input :title %>
+            </div>
+            <div class="field">
+                <%= f.text_area :body, div_html: { class: "field"} %>
+            </div>
+            <div class="ui inverted segment">
+                <%= f.button :submit, class: "ui inverted primary button" %>
+            </div>
+        </div>
+    <% end %>
+</div>

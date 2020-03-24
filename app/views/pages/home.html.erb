@@ -1,0 +1,30 @@
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+
+<% @articles.each do |post|%>
+<section class="section">
+    <div class="card">
+        <header class="card-header">
+            <p class="card-header-title">
+            <%=link_to post.title, @article %>
+            </p>
+            <a href="#" class="card-header-icon" aria-label="more options">
+            <span class="icon">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+            </a>
+        </header>
+        <div class="card-content">
+            <div class="content">
+                <%= post.body %>
+            </div>
+        </div>
+        <footer class="card-footer">
+            <a href={ link_to @article} class="card-footer-item">Show</a>
+            <a href="#" class="card-footer-item">Edit</a>
+            <a href="#" class="card-footer-item">Delete</a>
+        </footer>
+    </div>
+</section>
+   
+<% end %>
