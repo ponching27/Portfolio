@@ -1,10 +1,17 @@
-<div class="ui segment">
-    <h2 class="ui centered floated header">
-        <%= @article.title %>
-    </h2>
-    <div class="ui clearing divider">
-        <p>
-            <%= @article.body %>
-        </p>
+<% content_for :page_title, @article.title %>
+
+<section class="section">
+    <div class="box has-background-grey-lighter">
+        <div class="container has-text-centered ">
+            <h2 class="title">
+                <%= @article.title %>
+            </h2>
+            <p class="subtitle">
+                <%= @article.body %>
+            </p>
+        </div>
+        <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure!?"}, class: "button is-danger is-outlined" %>
     </div>
-</div>
+    
+</section>
+
